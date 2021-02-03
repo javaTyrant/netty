@@ -610,8 +610,7 @@ public class DefaultChannelPipeline implements ChannelPipeline {
     }
 
     private DefaultChannelHandlerContext findCtx(Predicate<DefaultChannelHandlerContext> predicate) {
-        for (int i = 0; i < handlers.size(); i++) {
-            DefaultChannelHandlerContext ctx = handlers.get(i);
+        for (DefaultChannelHandlerContext ctx : handlers) {
             if (predicate.test(ctx)) {
                 return ctx;
             }
